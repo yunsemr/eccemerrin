@@ -36,10 +36,10 @@ BCLOS is an acronym for *BiLSTM Closed LSTM Open*.
 
 BiLSTM's have a structure which allow them to reach information from backward and forward. However, LSTM's have a structure which allow them to reach information just from backward. 
 
-So, I wonder what happen if I remove a bidirectional LSTM block from model and add an unidirectional LSTM block in the place of it. So, I removed BiLSTM part from existing code and add another LSTM block in the place of BiLSTM. 
+So, I wonder what happen if I remove a bidirectional LSTM block from model and add an unidirectional LSTM block in the place of it. So, I removed BiLSTM part from existing code and add a LSTM block in the place of BiLSTM. 
 
 
-Before seeing results, I expected that results of Unidirectional layers would be much worse then Bidirectional layers. Suprisingly, *BCLOS* was better in;
+Before seeing results, I expected that results of Unidirectional layers would be much worse then Bidirectional layers. Suprisingly, *BCLOS* was better in 15 parameter out of 23. Which are;
  * *det_precision*, *d_fp*
  * *s_recall*, *s_precison*, *s_mae*, *s_rmse*, *s_fp*, *s_tn*, *s_fn*
  * *p_recall*, *p_precision*, *p_tp*, *p_fp*, *p_tn*, *p_fn*
