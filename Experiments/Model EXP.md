@@ -42,7 +42,7 @@ So, I wonder what happen if I remove a bidirectional LSTM block from model and a
 
 
 Before seeing results, I expected that results of Unidirectional layers would be much worse then Bidirectional layers. Suprisingly, *BCLOS* was better in 19 parameters out of 25. Those are;
- ***det_recall**, **det_precision**, **d_fp**, **d_tn**, **d,_fn**
+ * **det_recall**, **det_precision**, **d_fp**, **d_tn**, **d,_fn**
  * **s_recall**, **s_precison**, **s_mae**, **s_rmse**, **s_fp**, **s_fn**
  * **p_recall**, **p_precision**,**p_mae**, **p_rmse**, **p_tp**, **p_fp**, **p_tn**, **p_fn**
 
@@ -75,17 +75,3 @@ In this architecture; I add LSTM layers, as successive layers of CNN layers, to 
  * **det_recall**
  * **s_mae**, **s_rmse**, **s_tn**
  * **p_mae**, **p_rmse**
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
