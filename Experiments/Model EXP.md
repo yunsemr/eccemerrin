@@ -6,8 +6,6 @@ In order to do that we tried 14 different models in total.
 
 In each experiments we remove existing parts or add parts to existing code.
 
-For simplicity, we will explain the two most promising models for each training data.
-
 * Models trained on _STEADmini_ :
   * Salvation
   * Genesis
