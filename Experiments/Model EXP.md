@@ -23,9 +23,9 @@ In each experiments we remove existing parts or add parts to existing code.
   * EQT (for comparison)
   
 * Models trained on _STEAD-micro_ :
-  * EQUtils
-  * Kernel
-  * NB_Filter
+  * nb_filters_changed_EQTUtils
+  * kernel_size_changed
+  * nb_filters_changed_Trainer
   * EQT (for comparison)
   
 
@@ -59,7 +59,7 @@ As expected, result of this architecture was worse than **BCLOS**. *BC* was bett
 
 In *Partial Vanilla* architecture, I removed BiLSTM layers and CNN Layers from the common layers mentioned in [Google doc](https://docs.google.com/document/d/1JxLc_Bp0wNTSlZUpWlf_87riHRQKDenNGf665mFMVpQ/edit#heading=h.moi7c1x12w31).
 
-*Partial Vanilla* was better than EQT in 9 parametersout of 25. Those are;
+*Partial Vanilla* was better than EQT in 9 parameters out of 25. Those are;
  * **det_recall**,  **d_fn**
  * **s_mae**, **s_rmse**, **s_tn**
  * **p_recall**, **p_mae**, **p_rmse**, **p_fn**
@@ -73,3 +73,18 @@ In this architecture; I add LSTM layers, as successive layers of CNN layers, to 
  * **det_recall**
  * **s_mae**, **s_rmse**, **s_tn**
  * **p_mae**, **p_rmse**
+ 
+### Models Trained On _STEAD-micro_ ###
+
+#### nb_filters_changed_EQTUtils ####
+In *nb_filters_changed_EQTUtils* model we changed the nb_filters variable in EqT_utils.py doc (line=2734). Initially, variable was nb_filters=[8, 16, 16, 32, 32, 96, 96, 128] then, changed to nb_filters=[8, 16, 16, 32, 32, 64, 64, 128].
+
+
+#### kernel_size_changed ####
+
+In *kernel_size_changed* model we changed the kernel size in trainer.py doc (line=417). Initially, the kernel size was kernel_size=[11, 9, 7, 7, 5, 5, 3] then, changed to kernel_size=[10, 9, 8, 7, 6, 5, 4].
+
+
+#### nb_filters_changed_trainer ####
+
+In *nb_filters_changed_trainer* model, we changed the filter sizes in trainer.py doc (line=416). The original filter size were nb_filters=[8, 16, 16, 32, 32, 64, 64] then, change to nb_filters=[8, 8, 32, 32, 128, 128, 128].
