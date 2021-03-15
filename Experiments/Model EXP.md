@@ -23,9 +23,9 @@ In each experiments we remove existing parts or add parts to existing code.
   * EQT (for comparison)
   
 * Models trained on _STEAD-micro_ :
-  * EQUtils
-  * Kernel
-  * NB_Filter
+  * nb_filters_changed_EQTUtils
+  * kernel_size_changed
+  * nb_filters_changed_trainer
   * EQT (for comparison)
   
 
@@ -73,3 +73,35 @@ In this architecture; I add LSTM layers, as successive layers of CNN layers, to 
  * **det_recall**
  * **s_mae**, **s_rmse**, **s_tn**
  * **p_mae**, **p_rmse**
+
+### Models Trained On _STEAD-micro_ ###
+
+#### nb_filters_changed_EQTUtils ####
+
+In *nb_filters_changed model* we changed the filter size in EqT_utils.py (line=2734). The filter sizes we changed in Eqt_utils.py are related to last CNN block's filter sizes in the architecture mentioned in [Google doc](https://docs.google.com/document/d/1JxLc_Bp0wNTSlZUpWlf_87riHRQKDenNGf665mFMVpQ/edit#heading=h.moi7c1x12w31). The orginal fiter sizes were nb_filters=[8, 16, 16, 32, 32, 96, 96, 128] then, changed to nb_filters=[8, 16, 16, 32, 32, 64, 64, 128].
+
+*nb_filters_changed_EQTUtils* was better than EQT in 13 parameters out of 24. Those are;
+* **det_recall**, **d_tp**, **d_fp**
+* **p_recall**, **p_mae**, **p_tp**, **p_fp**
+* **s_recall**, **s_mae**, **s_rmse**, **s_tp**, **s_fp**
+* **#events**
+
+#### kernel_size_changed ####
+
+In *kernel_size_changed model* we changed the kernel sizes in trainer.py (line=417). The kernel sizes we changed in trainer.py are realted to the first CNN block's kernel sizes in the architecture mentioned in [Google doc](https://docs.google.com/document/d/1JxLc_Bp0wNTSlZUpWlf_87riHRQKDenNGf665mFMVpQ/edit#heading=h.moi7c1x12w31). The original kernel sizes were kernel_size=[11, 9, 7, 7, 5, 5, 3] then, changed to kernel_size=[10, 9, 8, 7, 6, 5, 4].
+
+*kernel_size_chaned* model was better than EQT in 11 parameters out of 24. Those are;
+* **det_recall**, **det_precision**, **d_tp**
+* **p_recall**, **p_precision**, **p_mae**, **p_tp**
+* **s_precision**, **s_tp**, **s_fn**
+* **#events**
+
+#### nb_filters_changed_trainer ####
+
+In *nb_filters_changed_trainer* model we changed the filter sizes in trainer.py (line=416). The filter sizes we changed in trainer.py are related to the first CNN block's filter sizes in the architecture mentioned in [Google doc](https://docs.google.com/document/d/1JxLc_Bp0wNTSlZUpWlf_87riHRQKDenNGf665mFMVpQ/edit#heading=h.moi7c1x12w31). The original filter sizes were nb_filters=[8, 16, 16, 32, 32, 64, 64] then, changed to nb_filters=[8, 8, 32, 32, 128, 128, 128].
+
+*nb_filters_changed_trainer* model was better than EQT in 12 parameters out of 24. Those are;
+* **det_recall**, **det_precision**, **d_tp**
+* **p_recall**, **p_precision**, **p_tp**
+* **s_recall**, **s_precision**, **s_mae**, **s_rmse**, **s_tp**
+* **#events**
